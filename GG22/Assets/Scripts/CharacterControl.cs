@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharacterControl : MonoBehaviour
 {
 
+    public PlayerControls controls;
+    Vector2 move;
 
     public float speed = 1f;
     public Rigidbody2D rb2d;
     public GameObject topClaw, midClaw, botClaw, dwnClaw;
-
-    private bool LeftKeyDown, RightKeyDown = false;
 
     public enum claws
     {
@@ -21,7 +22,7 @@ public class CharacterControl : MonoBehaviour
     }
     public claws activeClaw;
 
-    void Start()
+    private void Awake()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         topClaw = transform.Find("TOP CLAW").gameObject;
@@ -29,38 +30,24 @@ public class CharacterControl : MonoBehaviour
         botClaw = transform.Find("BOT CLAW").gameObject;
         dwnClaw = transform.Find("DWN CLAW").gameObject;
         activeClaw = claws.MidClaw;
+
+        controls = new PlayerControls();
+        controls.Gameplay.Enable();
+        controls.Gameplay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
+        controls.Gameplay.Move.canceled += ctx => move = Vector2.zero;
+        controls.Gameplay.ClawSwap.performed += ctx => ChangeClaw(ctx.ReadValue<Vector2>().y);
+        controls.Gameplay.ClawSwap.performed += ctx => ChangeClaw(1);
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Left"))
-            LeftKeyDown = true;
-        else if (Input.GetButtonUp("Left"))
-            LeftKeyDown = false;
-        if (Input.GetButtonDown("Right"))
-            RightKeyDown = true;
-        else if (Input.GetButtonUp("Right"))
-            RightKeyDown = false;
-        if (Input.GetButtonDown("Jump"))
-            Jump();
-        if (Input.GetButtonDown("ClawUp") && activeClaw != claws.TopClaw)
-            ChangeClaw(0);
-        if (Input.GetButtonDown("ClawDown") && activeClaw != claws.DwnClaw)
-            ChangeClaw(1);
+        //Debug.Log(controls.Gameplay.ClawSwap.ReadValue<Vector2>());
     }
 
     private void FixedUpdate()
     {
-        if (LeftKeyDown || RightKeyDown)
-            Move();
-    }
-
-    private void Move()
-    {
-        float h = Input.GetAxis("Horizontal");
-        Vector3 tempVect = new Vector2(h, 0);
-        tempVect = tempVect.normalized * speed * Time.deltaTime;
-        rb2d.MovePosition(rb2d.transform.position + tempVect);
+        Vector3 m = new Vector2(move.x, 0) * speed * Time.deltaTime;
+        rb2d.MovePosition(rb2d.transform.position + m);
     }
 
     private void Jump()
@@ -68,8 +55,9 @@ public class CharacterControl : MonoBehaviour
 
     }
 
-    private void ChangeClaw(int dir)
+    private void ChangeClaw(float dir)
     {
+        Debug.Log("AAAA");
             switch (activeClaw)
             {
                 case claws.TopClaw:
@@ -83,12 +71,12 @@ public class CharacterControl : MonoBehaviour
                 case claws.MidClaw:
                     {
                         midClaw.SetActive(false);
-                        if (dir == 0)
+                        if (dir == 1)
                         {
                             activeClaw = claws.TopClaw;
                             topClaw.SetActive(true);
                         }
-                        else
+                        else if(dir == -1)
                         {
                             activeClaw = claws.BotClaw;
                             botClaw.SetActive(true);
@@ -99,12 +87,12 @@ public class CharacterControl : MonoBehaviour
             case claws.BotClaw:
                 {
                     botClaw.SetActive(false);
-                    if (dir == 0)
+                    if (dir == 1)
                     {
                         activeClaw = claws.MidClaw;
                         midClaw.SetActive(true);
                     }
-                    else
+                    else if(dir == -1)
                     {
                         activeClaw = claws.DwnClaw;
                         dwnClaw.SetActive(true);
@@ -114,9 +102,9 @@ public class CharacterControl : MonoBehaviour
 
             case claws.DwnClaw:
                     {
-                        botClaw.SetActive(false);
+                        dwnClaw.SetActive(false);
                         activeClaw = claws.BotClaw;
-                        midClaw.SetActive(true);
+                        botClaw.SetActive(true);
                         break;
                     }
             }
