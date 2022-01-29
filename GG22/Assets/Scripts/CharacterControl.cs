@@ -53,8 +53,8 @@ public class CharacterControl : MonoBehaviour
             j = new Vector2(0, jump) * jumpHeight;
             rb2d.AddForce(j, ForceMode2D.Impulse);
             canJump = !canJump;
-            jump = 0;
         }
+        jump = 0;
 
         if (clawChange != 0 && canChange)
             if((clawChange == 1 && activeClaw != claws.TopClaw) || (clawChange == -1 && activeClaw != claws.DwnClaw))
