@@ -10,6 +10,9 @@ public class CharacterControl : MonoBehaviour
     Vector2 move;
 
     public float speed = 1f;
+    public float jumpHeight = 3f;
+    float jump;
+    bool canJump = true;
     public Rigidbody2D rb2d;
     public GameObject topClaw, midClaw, botClaw, dwnClaw;
 
@@ -36,28 +39,36 @@ public class CharacterControl : MonoBehaviour
         controls.Gameplay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
         controls.Gameplay.Move.canceled += ctx => move = Vector2.zero;
         controls.Gameplay.ClawSwap.performed += ctx => ChangeClaw(ctx.ReadValue<Vector2>().y);
-        controls.Gameplay.ClawSwap.performed += ctx => ChangeClaw(1);
+        controls.Gameplay.Jump.performed += ctx => jump = ctx.ReadValue<float>();
+        controls.Gameplay.Jump.canceled += ctx => jump = 0;
     }
 
     void Update()
     {
-        //Debug.Log(controls.Gameplay.ClawSwap.ReadValue<Vector2>());
+        Vector2 j;
+        if (jump != 0 && canJump)
+        {
+            j = new Vector2(0, jump) * jumpHeight;
+            rb2d.AddForce(j, ForceMode2D.Impulse);
+            //rb2d.velocity = Vector2.up * jumpHeight;
+            canJump = !canJump;
+        }
+        //Debug.Log(controls.Gameplay.Jump.ReadValue<float>());
     }
 
     private void FixedUpdate()
     {
+        Debug.Log(canJump);
         Vector3 m = new Vector2(move.x, 0) * speed * Time.deltaTime;
-        rb2d.MovePosition(rb2d.transform.position + m);
-    }
-
-    private void Jump()
-    {
-
+        Vector2 vel = rb2d.velocity;
+        m.y = vel.y;
+        rb2d.AddForce(new Vector2(0, -15.0f), ForceMode2D.Force);
+        rb2d.velocity = m;
     }
 
     private void ChangeClaw(float dir)
     {
-        Debug.Log("AAAA");
+        Debug.Log(dir);
             switch (activeClaw)
             {
                 case claws.TopClaw:
@@ -113,5 +124,13 @@ public class CharacterControl : MonoBehaviour
     private void Strike()
     {
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Floor")
+        {
+            canJump = true;
+        }
     }
 }

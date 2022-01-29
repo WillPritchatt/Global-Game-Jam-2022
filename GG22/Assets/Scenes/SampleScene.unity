@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 312520572}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -657,13 +657,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6142158335179238488, guid: b40f2e0928e63b545912f5febdc789be,
         type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238488, guid: b40f2e0928e63b545912f5febdc789be,
+        type: 3}
       propertyPath: activeClaw
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238488, guid: b40f2e0928e63b545912f5febdc789be,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6142158335179238490, guid: b40f2e0928e63b545912f5febdc789be,
         type: 3}
       propertyPath: m_Name
       value: BlueCrab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238491, guid: b40f2e0928e63b545912f5febdc789be,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238491, guid: b40f2e0928e63b545912f5febdc789be,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238491, guid: b40f2e0928e63b545912f5febdc789be,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238491, guid: b40f2e0928e63b545912f5febdc789be,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6142158335179238495, guid: b40f2e0928e63b545912f5febdc789be,
         type: 3}
@@ -673,12 +703,12 @@ PrefabInstance:
     - target: {fileID: 6142158335179238495, guid: b40f2e0928e63b545912f5febdc789be,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -4.0299997
       objectReference: {fileID: 0}
     - target: {fileID: 6142158335179238495, guid: b40f2e0928e63b545912f5febdc789be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.3
+      value: -6.67
       objectReference: {fileID: 0}
     - target: {fileID: 6142158335179238495, guid: b40f2e0928e63b545912f5febdc789be,
         type: 3}
@@ -790,6 +820,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6233066141990325720, guid: ce437b96ca44df94f825ac3b720b2f14,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233066141990325720, guid: ce437b96ca44df94f825ac3b720b2f14,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233066141990325720, guid: ce437b96ca44df94f825ac3b720b2f14,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233066141990325720, guid: ce437b96ca44df94f825ac3b720b2f14,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6233066141990325721, guid: ce437b96ca44df94f825ac3b720b2f14,
         type: 3}
       propertyPath: m_Name
@@ -797,8 +847,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6233066141990325723, guid: ce437b96ca44df94f825ac3b720b2f14,
         type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233066141990325723, guid: ce437b96ca44df94f825ac3b720b2f14,
+        type: 3}
       propertyPath: activeClaw
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233066141990325723, guid: ce437b96ca44df94f825ac3b720b2f14,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6233066141990325724, guid: ce437b96ca44df94f825ac3b720b2f14,
         type: 3}
@@ -808,12 +868,12 @@ PrefabInstance:
     - target: {fileID: 6233066141990325724, guid: ce437b96ca44df94f825ac3b720b2f14,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12
+      value: 11.97
       objectReference: {fileID: 0}
     - target: {fileID: 6233066141990325724, guid: ce437b96ca44df94f825ac3b720b2f14,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.3
+      value: -6.67
       objectReference: {fileID: 0}
     - target: {fileID: 6233066141990325724, guid: ce437b96ca44df94f825ac3b720b2f14,
         type: 3}
@@ -874,6 +934,31 @@ PrefabInstance:
       propertyPath: activeClaw
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4573437749971167673, guid: d28374f310e32c0498e840989585c808,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573437749971167674, guid: d28374f310e32c0498e840989585c808,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573437749971167674, guid: d28374f310e32c0498e840989585c808,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573437749971167674, guid: d28374f310e32c0498e840989585c808,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573437749971167674, guid: d28374f310e32c0498e840989585c808,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4573437749971167675, guid: d28374f310e32c0498e840989585c808,
         type: 3}
       propertyPath: m_Name
@@ -887,12 +972,12 @@ PrefabInstance:
     - target: {fileID: 4573437749971167678, guid: d28374f310e32c0498e840989585c808,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 3.9700003
       objectReference: {fileID: 0}
     - target: {fileID: 4573437749971167678, guid: d28374f310e32c0498e840989585c808,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.3
+      value: -6.67
       objectReference: {fileID: 0}
     - target: {fileID: 4573437749971167678, guid: d28374f310e32c0498e840989585c808,
         type: 3}
@@ -945,13 +1030,48 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6142158335179238488, guid: 33c1bb9608913994cb87fba60221d5aa,
         type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238488, guid: 33c1bb9608913994cb87fba60221d5aa,
+        type: 3}
+      propertyPath: JumpHeight
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238488, guid: 33c1bb9608913994cb87fba60221d5aa,
+        type: 3}
       propertyPath: activeClaw
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238488, guid: 33c1bb9608913994cb87fba60221d5aa,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6142158335179238490, guid: 33c1bb9608913994cb87fba60221d5aa,
         type: 3}
       propertyPath: m_Name
       value: Crab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238491, guid: 33c1bb9608913994cb87fba60221d5aa,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238491, guid: 33c1bb9608913994cb87fba60221d5aa,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238491, guid: 33c1bb9608913994cb87fba60221d5aa,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142158335179238491, guid: 33c1bb9608913994cb87fba60221d5aa,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6142158335179238495, guid: 33c1bb9608913994cb87fba60221d5aa,
         type: 3}
@@ -961,12 +1081,12 @@ PrefabInstance:
     - target: {fileID: 6142158335179238495, guid: 33c1bb9608913994cb87fba60221d5aa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12
+      value: -12.03
       objectReference: {fileID: 0}
     - target: {fileID: 6142158335179238495, guid: 33c1bb9608913994cb87fba60221d5aa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.3
+      value: -6.67
       objectReference: {fileID: 0}
     - target: {fileID: 6142158335179238495, guid: 33c1bb9608913994cb87fba60221d5aa,
         type: 3}
