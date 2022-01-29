@@ -2,7 +2,7 @@
     "name": "PlayerControls",
     "maps": [
         {
-            "name": "Gameplay",
+            "name": "Left",
             "id": "46a371d0-254f-4988-beed-460e467dac88",
             "actions": [
                 {
@@ -78,7 +78,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "5465543b-48de-446a-95c8-5ef8d4f25dd9",
+                    "id": "9865f50a-c6e3-48dd-8b25-ca74636bb99d",
                     "path": "<XInputController>/leftStick/right",
                     "interactions": "",
                     "processors": "",
@@ -144,8 +144,162 @@
                 },
                 {
                     "name": "down",
-                    "id": "29201ba2-6ab2-4c26-8a7b-95be31abfff4",
+                    "id": "d08fba8a-1304-4573-8a9c-6c0a3f69d411",
                     "path": "<XInputController>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClawSwap",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Right",
+            "id": "7aa9b8a9-6820-42fb-993a-3008a4fdec66",
+            "actions": [
+                {
+                    "name": "ClawSwap",
+                    "type": "PassThrough",
+                    "id": "415575e9-ebfb-4cd3-bcd3-df1e863516eb",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Strike",
+                    "type": "Value",
+                    "id": "3d7aa770-aa63-4cb8-8ff4-fae80128fe5c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Jump",
+                    "type": "Value",
+                    "id": "62d71938-3e68-456d-b938-2f18df828987",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Move",
+                    "type": "PassThrough",
+                    "id": "5325d756-e813-4131-a5e4-0013d10b7fed",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9433cf70-55c0-4dee-abbe-d8b634839000",
+                    "path": "<XInputController>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "8a5513d9-e224-4920-8eb1-70f772ac51d2",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "71ede45b-e280-4e25-918d-c4320f92f520",
+                    "path": "<XInputController>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "195af253-24f3-4d5b-9461-18fd6a037ed0",
+                    "path": "<XInputController>/rightStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "b8ef2f52-743f-4d4f-8cc5-9149271904bd",
+                    "path": "<XInputController>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ce864ce0-4d56-4324-b52c-341a61dec0f5",
+                    "path": "<XInputController>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Strike",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c556158-c155-4bf9-a0e9-bd7415577d5a",
+                    "path": "<XInputController>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClawSwap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "3a1a41b8-f32c-4049-9dfd-cfdceb70a1ff",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClawSwap",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "6503a7de-8778-4f41-b845-93c5d6b5e60c",
+                    "path": "<XInputController>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClawSwap",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "c226e504-8f8d-48f8-bbad-06be5a1c62e2",
+                    "path": "<XInputController>/rightStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

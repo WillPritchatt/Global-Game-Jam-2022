@@ -147,8 +147,8 @@ GameObject:
   - component: {fileID: 6233066141990325724}
   - component: {fileID: 6233066141990325725}
   - component: {fileID: 6233066141990325720}
-  - component: {fileID: 6233066141990325723}
   - component: {fileID: 1794066645}
+  - component: {fileID: 1021582447397932907}
   m_Layer: 0
   m_Name: GreenCrab
   m_TagString: Crab2
@@ -246,26 +246,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6233066141990325723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6233066141990325721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b4342102a67d84ea53aed894a1abf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 400
-  jumpHeight: 17
-  rb2d: {fileID: 0}
-  topClaw: {fileID: 0}
-  midClaw: {fileID: 0}
-  botClaw: {fileID: 0}
-  dwnClaw: {fileID: 0}
-  activeClaw: 0
 --- !u!60 &1794066645
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -337,6 +317,26 @@ PolygonCollider2D:
       - {x: 2.19, y: 0.96999997}
       - {x: 2.1599998, y: 0.97999996}
       - {x: 2.1399999, y: 0.96}
+--- !u!114 &1021582447397932907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6233066141990325721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872b4c7bc2f282a48b1391242c7112ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 400
+  jumpHeight: 17
+  rb2d: {fileID: 0}
+  topClaw: {fileID: 0}
+  midClaw: {fileID: 0}
+  botClaw: {fileID: 0}
+  dwnClaw: {fileID: 0}
+  activeClaw: 0
 --- !u!1 &6233066142161926802
 GameObject:
   m_ObjectHideFlags: 0

@@ -419,8 +419,8 @@ GameObject:
   - component: {fileID: 6142158335179238495}
   - component: {fileID: 6142158335179238494}
   - component: {fileID: 6142158335179238491}
-  - component: {fileID: 6142158335179238488}
   - component: {fileID: 1805031266}
+  - component: {fileID: 102425739795532779}
   m_Layer: 0
   m_Name: BlueCrab
   m_TagString: Crab1
@@ -518,26 +518,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6142158335179238488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6142158335179238490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b4342102a67d84ea53aed894a1abf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 400
-  jumpHeight: 17
-  rb2d: {fileID: 0}
-  topClaw: {fileID: 0}
-  midClaw: {fileID: 0}
-  botClaw: {fileID: 0}
-  dwnClaw: {fileID: 0}
-  activeClaw: 0
 --- !u!60 &1805031266
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -565,19 +545,24 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.71999997, y: -1.4599999}
       - {x: -0.47, y: -1.4599999}
-      - {x: -0.0036942642, y: -1.4534495}
-      - {x: 0.33535844, y: -1.4502964}
-      - {x: 0.5564569, y: -1.4430873}
-      - {x: 0.4666615, y: -1.4238741}
-      - {x: 0.563601, y: -1.4395599}
-      - {x: 0.8294017, y: -1.4474013}
-      - {x: 0.7, y: -1.28}
-      - {x: 0.84, y: -1.4599999}
+      - {x: 0.2054162, y: -1.4839044}
+      - {x: 0.33100888, y: -1.4956677}
+      - {x: 0.53754616, y: -1.5173655}
+      - {x: 0.67192125, y: -1.5121145}
+      - {x: 0.68044674, y: -1.501353}
+      - {x: 0.6836499, y: -1.4968913}
+      - {x: 0.7485938, y: -1.4793997}
+      - {x: 0.8066825, y: -1.4702923}
+      - {x: 0.82639575, y: -1.4685802}
+      - {x: 0.83808273, y: -1.4684775}
+      - {x: 0.8380585, y: -1.4687557}
+      - {x: 0.853729, y: -1.46212}
+      - {x: 0.86493045, y: -1.4579514}
       - {x: 1.06, y: -1.4599999}
       - {x: 1.0699999, y: -0.78999996}
       - {x: 1.04, y: -0.78}
-      - {x: 0.9, y: -0.48}
-      - {x: 0.88, y: -0.45999998}
+      - {x: 0.90079415, y: -0.47841164}
+      - {x: 0.9514717, y: -0.48223537}
       - {x: 1.04, y: -0.5}
       - {x: 1.18, y: -0.79999995}
       - {x: 1.1999999, y: -0.82}
@@ -599,6 +584,7 @@ PolygonCollider2D:
       - {x: -0.28, y: 1.29}
       - {x: -1.06, y: 0.69}
       - {x: -1.0687509, y: -0.1445589}
+      - {x: -1.1716657, y: -0.14362288}
       - {x: -1.5699999, y: -0.14}
       - {x: -1.56, y: -0.32999998}
       - {x: -1.6999999, y: -0.65}
@@ -606,9 +592,29 @@ PolygonCollider2D:
       - {x: -1.6899999, y: -1.3299999}
       - {x: -1.52, y: -1.4599999}
       - {x: -1.3299999, y: -1.4599999}
-      - {x: -0.83, y: -0.48999998}
-      - {x: -0.93, y: -0.78999996}
-      - {x: -0.91999996, y: -1.36}
+      - {x: -1.0475392, y: -1.440438}
+      - {x: -0.9248206, y: -1.4452062}
+      - {x: -0.82417905, y: -1.4532303}
+--- !u!114 &102425739795532779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6142158335179238490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872b4c7bc2f282a48b1391242c7112ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 400
+  jumpHeight: 17
+  rb2d: {fileID: 0}
+  topClaw: {fileID: 0}
+  midClaw: {fileID: 0}
+  botClaw: {fileID: 0}
+  dwnClaw: {fileID: 0}
+  activeClaw: 0
 --- !u!1 &6142158336247306683
 GameObject:
   m_ObjectHideFlags: 0

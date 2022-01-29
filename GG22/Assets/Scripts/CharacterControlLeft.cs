@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 
-public class CharacterControl : MonoBehaviour
+public class CharacterControlLeft : MonoBehaviour
 {
 
     public PlayerControls controls;
@@ -17,6 +18,7 @@ public class CharacterControl : MonoBehaviour
     bool canJump = true;
     public Rigidbody2D rb2d;
     public GameObject topClaw, midClaw, botClaw, dwnClaw;
+
 
     public enum claws
     {
@@ -37,12 +39,12 @@ public class CharacterControl : MonoBehaviour
         activeClaw = claws.MidClaw;
 
         controls = new PlayerControls();
-        controls.Gameplay.Enable();
-        controls.Gameplay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
-        controls.Gameplay.Move.canceled += ctx => move = Vector2.zero;
-        controls.Gameplay.ClawSwap.performed += ctx => clawChange = ctx.ReadValue<Vector2>().y;
-        controls.Gameplay.Jump.performed += ctx => jump = ctx.ReadValue<float>();
-        controls.Gameplay.Strike.performed += ctx => Strike();
+        controls.Left.Enable();
+        controls.Left.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
+        controls.Left.Move.canceled += ctx => move = Vector2.zero;
+        controls.Left.ClawSwap.performed += ctx => clawChange = ctx.ReadValue<Vector2>().y;
+        controls.Left.Jump.performed += ctx => jump = ctx.ReadValue<float>();
+        controls.Left.Strike.performed += ctx => Strike();
     }
 
     void Update()
@@ -59,7 +61,7 @@ public class CharacterControl : MonoBehaviour
         if (clawChange != 0 && canChange)
             if((clawChange == 1 && activeClaw != claws.TopClaw) || (clawChange == -1 && activeClaw != claws.DwnClaw))
             {
-                Debug.Log(controls.Gameplay.ClawSwap.ReadValue<Vector2>());
+                Debug.Log(controls.Right.ClawSwap.ReadValue<Vector2>());
                 ChangeClaw(clawChange);
             }
 

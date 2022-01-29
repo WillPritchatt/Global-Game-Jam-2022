@@ -24,7 +24,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     ""name"": ""PlayerControls"",
     ""maps"": [
         {
-            ""name"": ""Gameplay"",
+            ""name"": ""Left"",
             ""id"": ""46a371d0-254f-4988-beed-460e467dac88"",
             ""actions"": [
                 {
@@ -100,7 +100,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""5465543b-48de-446a-95c8-5ef8d4f25dd9"",
+                    ""id"": ""9865f50a-c6e3-48dd-8b25-ca74636bb99d"",
                     ""path"": ""<XInputController>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -166,8 +166,162 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""29201ba2-6ab2-4c26-8a7b-95be31abfff4"",
+                    ""id"": ""d08fba8a-1304-4573-8a9c-6c0a3f69d411"",
                     ""path"": ""<XInputController>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClawSwap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
+        },
+        {
+            ""name"": ""Right"",
+            ""id"": ""7aa9b8a9-6820-42fb-993a-3008a4fdec66"",
+            ""actions"": [
+                {
+                    ""name"": ""ClawSwap"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""415575e9-ebfb-4cd3-bcd3-df1e863516eb"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Strike"",
+                    ""type"": ""Value"",
+                    ""id"": ""3d7aa770-aa63-4cb8-8ff4-fae80128fe5c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Value"",
+                    ""id"": ""62d71938-3e68-456d-b938-2f18df828987"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""5325d756-e813-4131-a5e4-0013d10b7fed"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""9433cf70-55c0-4dee-abbe-d8b634839000"",
+                    ""path"": ""<XInputController>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""8a5513d9-e224-4920-8eb1-70f772ac51d2"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""71ede45b-e280-4e25-918d-c4320f92f520"",
+                    ""path"": ""<XInputController>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""195af253-24f3-4d5b-9461-18fd6a037ed0"",
+                    ""path"": ""<XInputController>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b8ef2f52-743f-4d4f-8cc5-9149271904bd"",
+                    ""path"": ""<XInputController>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ce864ce0-4d56-4324-b52c-341a61dec0f5"",
+                    ""path"": ""<XInputController>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Strike"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8c556158-c155-4bf9-a0e9-bd7415577d5a"",
+                    ""path"": ""<XInputController>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClawSwap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""3a1a41b8-f32c-4049-9dfd-cfdceb70a1ff"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClawSwap"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""6503a7de-8778-4f41-b845-93c5d6b5e60c"",
+                    ""path"": ""<XInputController>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClawSwap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""c226e504-8f8d-48f8-bbad-06be5a1c62e2"",
+                    ""path"": ""<XInputController>/rightStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -180,12 +334,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // Gameplay
-        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
-        m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
-        m_Gameplay_Strike = m_Gameplay.FindAction("Strike", throwIfNotFound: true);
-        m_Gameplay_ClawSwap = m_Gameplay.FindAction("ClawSwap", throwIfNotFound: true);
+        // Left
+        m_Left = asset.FindActionMap("Left", throwIfNotFound: true);
+        m_Left_Move = m_Left.FindAction("Move", throwIfNotFound: true);
+        m_Left_Jump = m_Left.FindAction("Jump", throwIfNotFound: true);
+        m_Left_Strike = m_Left.FindAction("Strike", throwIfNotFound: true);
+        m_Left_ClawSwap = m_Left.FindAction("ClawSwap", throwIfNotFound: true);
+        // Right
+        m_Right = asset.FindActionMap("Right", throwIfNotFound: true);
+        m_Right_ClawSwap = m_Right.FindAction("ClawSwap", throwIfNotFound: true);
+        m_Right_Strike = m_Right.FindAction("Strike", throwIfNotFound: true);
+        m_Right_Jump = m_Right.FindAction("Jump", throwIfNotFound: true);
+        m_Right_Move = m_Right.FindAction("Move", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -242,44 +402,44 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Gameplay
-    private readonly InputActionMap m_Gameplay;
-    private IGameplayActions m_GameplayActionsCallbackInterface;
-    private readonly InputAction m_Gameplay_Move;
-    private readonly InputAction m_Gameplay_Jump;
-    private readonly InputAction m_Gameplay_Strike;
-    private readonly InputAction m_Gameplay_ClawSwap;
-    public struct GameplayActions
+    // Left
+    private readonly InputActionMap m_Left;
+    private ILeftActions m_LeftActionsCallbackInterface;
+    private readonly InputAction m_Left_Move;
+    private readonly InputAction m_Left_Jump;
+    private readonly InputAction m_Left_Strike;
+    private readonly InputAction m_Left_ClawSwap;
+    public struct LeftActions
     {
         private @PlayerControls m_Wrapper;
-        public GameplayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Gameplay_Move;
-        public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
-        public InputAction @Strike => m_Wrapper.m_Gameplay_Strike;
-        public InputAction @ClawSwap => m_Wrapper.m_Gameplay_ClawSwap;
-        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+        public LeftActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Left_Move;
+        public InputAction @Jump => m_Wrapper.m_Left_Jump;
+        public InputAction @Strike => m_Wrapper.m_Left_Strike;
+        public InputAction @ClawSwap => m_Wrapper.m_Left_ClawSwap;
+        public InputActionMap Get() { return m_Wrapper.m_Left; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
-        public void SetCallbacks(IGameplayActions instance)
+        public static implicit operator InputActionMap(LeftActions set) { return set.Get(); }
+        public void SetCallbacks(ILeftActions instance)
         {
-            if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
+            if (m_Wrapper.m_LeftActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Jump.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
-                @Strike.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStrike;
-                @Strike.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStrike;
-                @Strike.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStrike;
-                @ClawSwap.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnClawSwap;
-                @ClawSwap.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnClawSwap;
-                @ClawSwap.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnClawSwap;
+                @Move.started -= m_Wrapper.m_LeftActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_LeftActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_LeftActionsCallbackInterface.OnMove;
+                @Jump.started -= m_Wrapper.m_LeftActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_LeftActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_LeftActionsCallbackInterface.OnJump;
+                @Strike.started -= m_Wrapper.m_LeftActionsCallbackInterface.OnStrike;
+                @Strike.performed -= m_Wrapper.m_LeftActionsCallbackInterface.OnStrike;
+                @Strike.canceled -= m_Wrapper.m_LeftActionsCallbackInterface.OnStrike;
+                @ClawSwap.started -= m_Wrapper.m_LeftActionsCallbackInterface.OnClawSwap;
+                @ClawSwap.performed -= m_Wrapper.m_LeftActionsCallbackInterface.OnClawSwap;
+                @ClawSwap.canceled -= m_Wrapper.m_LeftActionsCallbackInterface.OnClawSwap;
             }
-            m_Wrapper.m_GameplayActionsCallbackInterface = instance;
+            m_Wrapper.m_LeftActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Move.started += instance.OnMove;
@@ -297,12 +457,76 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             }
         }
     }
-    public GameplayActions @Gameplay => new GameplayActions(this);
-    public interface IGameplayActions
+    public LeftActions @Left => new LeftActions(this);
+
+    // Right
+    private readonly InputActionMap m_Right;
+    private IRightActions m_RightActionsCallbackInterface;
+    private readonly InputAction m_Right_ClawSwap;
+    private readonly InputAction m_Right_Strike;
+    private readonly InputAction m_Right_Jump;
+    private readonly InputAction m_Right_Move;
+    public struct RightActions
+    {
+        private @PlayerControls m_Wrapper;
+        public RightActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ClawSwap => m_Wrapper.m_Right_ClawSwap;
+        public InputAction @Strike => m_Wrapper.m_Right_Strike;
+        public InputAction @Jump => m_Wrapper.m_Right_Jump;
+        public InputAction @Move => m_Wrapper.m_Right_Move;
+        public InputActionMap Get() { return m_Wrapper.m_Right; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(RightActions set) { return set.Get(); }
+        public void SetCallbacks(IRightActions instance)
+        {
+            if (m_Wrapper.m_RightActionsCallbackInterface != null)
+            {
+                @ClawSwap.started -= m_Wrapper.m_RightActionsCallbackInterface.OnClawSwap;
+                @ClawSwap.performed -= m_Wrapper.m_RightActionsCallbackInterface.OnClawSwap;
+                @ClawSwap.canceled -= m_Wrapper.m_RightActionsCallbackInterface.OnClawSwap;
+                @Strike.started -= m_Wrapper.m_RightActionsCallbackInterface.OnStrike;
+                @Strike.performed -= m_Wrapper.m_RightActionsCallbackInterface.OnStrike;
+                @Strike.canceled -= m_Wrapper.m_RightActionsCallbackInterface.OnStrike;
+                @Jump.started -= m_Wrapper.m_RightActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_RightActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_RightActionsCallbackInterface.OnJump;
+                @Move.started -= m_Wrapper.m_RightActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_RightActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_RightActionsCallbackInterface.OnMove;
+            }
+            m_Wrapper.m_RightActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ClawSwap.started += instance.OnClawSwap;
+                @ClawSwap.performed += instance.OnClawSwap;
+                @ClawSwap.canceled += instance.OnClawSwap;
+                @Strike.started += instance.OnStrike;
+                @Strike.performed += instance.OnStrike;
+                @Strike.canceled += instance.OnStrike;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+            }
+        }
+    }
+    public RightActions @Right => new RightActions(this);
+    public interface ILeftActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnStrike(InputAction.CallbackContext context);
         void OnClawSwap(InputAction.CallbackContext context);
+    }
+    public interface IRightActions
+    {
+        void OnClawSwap(InputAction.CallbackContext context);
+        void OnStrike(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
 }
