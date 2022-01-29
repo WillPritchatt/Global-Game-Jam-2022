@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b4342102a67d84ea53aed894a1abf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 400
   jumpHeight: 17
   rb2d: {fileID: 0}
   topClaw: {fileID: 0}
@@ -157,8 +157,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.71999997, y: -1.4599999}
       - {x: -0.47, y: -1.4599999}
-      - {x: -0.03, y: -0.48999998}
-      - {x: 0.24, y: -0.5}
+      - {x: 0.066113204, y: -1.4236729}
+      - {x: 0.7960837, y: -1.4542685}
       - {x: 0.38, y: -0.79999995}
       - {x: 0.39999998, y: -0.82}
       - {x: 0.7, y: -0.82}
@@ -197,7 +197,6 @@ PolygonCollider2D:
       - {x: -0.83, y: -0.48999998}
       - {x: -0.93, y: -0.78999996}
       - {x: -0.91999996, y: -1.36}
-    - []
 --- !u!1 &4573437750109127513
 GameObject:
   m_ObjectHideFlags: 0

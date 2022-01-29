@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b4342102a67d84ea53aed894a1abf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 400
   jumpHeight: 17
   rb2d: {fileID: 0}
   topClaw: {fileID: 0}
@@ -606,7 +606,6 @@ PolygonCollider2D:
       - {x: -0.83, y: -0.48999998}
       - {x: -0.93, y: -0.78999996}
       - {x: -0.91999996, y: -1.36}
-    - []
 --- !u!1 &6142158336247306683
 GameObject:
   m_ObjectHideFlags: 0
