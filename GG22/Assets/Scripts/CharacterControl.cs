@@ -12,6 +12,8 @@ public class CharacterControl : MonoBehaviour
     public float speed = 1f;
     public float jumpHeight = 3f;
     float jump;
+    float clawChange;
+    bool canChange = true;
     bool canJump = true;
     public Rigidbody2D rb2d;
     public GameObject topClaw, midClaw, botClaw, dwnClaw;
@@ -38,9 +40,9 @@ public class CharacterControl : MonoBehaviour
         controls.Gameplay.Enable();
         controls.Gameplay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
         controls.Gameplay.Move.canceled += ctx => move = Vector2.zero;
-        controls.Gameplay.ClawSwap.performed += ctx => ChangeClaw(ctx.ReadValue<Vector2>().y);
+        controls.Gameplay.ClawSwap.performed += ctx => clawChange = ctx.ReadValue<Vector2>().y;
         controls.Gameplay.Jump.performed += ctx => jump = ctx.ReadValue<float>();
-        controls.Gameplay.Jump.canceled += ctx => jump = 0;
+        controls.Gameplay.Strike.performed += ctx => Strike();
     }
 
     void Update()
@@ -50,15 +52,25 @@ public class CharacterControl : MonoBehaviour
         {
             j = new Vector2(0, jump) * jumpHeight;
             rb2d.AddForce(j, ForceMode2D.Impulse);
-            //rb2d.velocity = Vector2.up * jumpHeight;
             canJump = !canJump;
         }
-        //Debug.Log(controls.Gameplay.Jump.ReadValue<float>());
+
+        if (clawChange != 0 && canChange)
+            if((clawChange == 1 && activeClaw != claws.TopClaw) || (clawChange == -1 && activeClaw != claws.DwnClaw))
+            {
+                Debug.Log(controls.Gameplay.ClawSwap.ReadValue<Vector2>());
+                ChangeClaw(clawChange);
+            }
+
+
+        if (clawChange == 0 && !canChange)
+            canChange = !canChange;
+        
+
     }
 
     private void FixedUpdate()
     {
-        Debug.Log(canJump);
         Vector3 m = new Vector2(move.x, 0) * speed * Time.deltaTime;
         Vector2 vel = rb2d.velocity;
         m.y = vel.y;
@@ -68,42 +80,42 @@ public class CharacterControl : MonoBehaviour
 
     private void ChangeClaw(float dir)
     {
-        Debug.Log(dir);
-            switch (activeClaw)
-            {
-                case claws.TopClaw:
-                    {
-                        topClaw.SetActive(false);
-                        activeClaw = claws.MidClaw;
-                        midClaw.SetActive(true);
-                        break;
-                    }
+        canChange = !canChange;
+        switch (activeClaw)
+        {
+            case claws.TopClaw:
+                {
+                    topClaw.SetActive(false);
+                    activeClaw = claws.MidClaw;
+                    midClaw.SetActive(true);
+                    break;
+                }
 
-                case claws.MidClaw:
+            case claws.MidClaw:
+                {
+                    midClaw.SetActive(false);
+                    if (dir > 0)
                     {
-                        midClaw.SetActive(false);
-                        if (dir == 1)
-                        {
-                            activeClaw = claws.TopClaw;
-                            topClaw.SetActive(true);
-                        }
-                        else if(dir == -1)
-                        {
-                            activeClaw = claws.BotClaw;
-                            botClaw.SetActive(true);
-                        }
-                        break;
+                        activeClaw = claws.TopClaw;
+                        topClaw.SetActive(true);
                     }
+                    else if (dir < 0)
+                    {
+                        activeClaw = claws.BotClaw;
+                        botClaw.SetActive(true);
+                    }
+                    break;
+                }
 
             case claws.BotClaw:
                 {
                     botClaw.SetActive(false);
-                    if (dir == 1)
+                    if (dir > 0)
                     {
                         activeClaw = claws.MidClaw;
                         midClaw.SetActive(true);
                     }
-                    else if(dir == -1)
+                    else if (dir < 0)
                     {
                         activeClaw = claws.DwnClaw;
                         dwnClaw.SetActive(true);
@@ -112,18 +124,18 @@ public class CharacterControl : MonoBehaviour
                 }
 
             case claws.DwnClaw:
-                    {
-                        dwnClaw.SetActive(false);
-                        activeClaw = claws.BotClaw;
-                        botClaw.SetActive(true);
-                        break;
-                    }
-            }
+                {
+                    dwnClaw.SetActive(false);
+                    activeClaw = claws.BotClaw;
+                    botClaw.SetActive(true);
+                    break;
+                }
+        }
     }
 
     private void Strike()
     {
-
+        Debug.Log("Strike");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -36,7 +36,7 @@
                     "name": "ClawSwap",
                     "type": "PassThrough",
                     "id": "4831c4ec-e298-46bc-83a0-beae057d56de",
-                    "expectedControlType": "Dpad",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -64,28 +64,6 @@
                     "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "a3701c36-ffcb-4b08-a31b-f76d07853e09",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "29201ba2-6ab2-4c26-8a7b-95be31abfff4",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "left",
@@ -133,8 +111,8 @@
                 },
                 {
                     "name": "",
-                    "id": "b67c7c74-268d-40b5-8b3b-e7ae395d461e",
-                    "path": "<XInputController>/dpad",
+                    "id": "7430ac20-3feb-4d23-a1b9-225f99db75f3",
+                    "path": "<XInputController>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -144,7 +122,7 @@
                 },
                 {
                     "name": "2D Vector",
-                    "id": "e3ba835a-2e89-4b15-ba37-8b7b48cf793b",
+                    "id": "f2a40f61-dd2a-4e80-a411-29f6e07e0896",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -155,8 +133,8 @@
                 },
                 {
                     "name": "up",
-                    "id": "e622c9bd-ec01-477c-ae53-53e7307b6031",
-                    "path": "<XInputController>/dpad/up",
+                    "id": "a3701c36-ffcb-4b08-a31b-f76d07853e09",
+                    "path": "<XInputController>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -166,30 +144,8 @@
                 },
                 {
                     "name": "down",
-                    "id": "ef9848fa-4bc5-4852-9c3f-f272a0b2e340",
-                    "path": "<XInputController>/dpad/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ClawSwap",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "efee1785-ccfc-4e3b-876c-223109e4a581",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ClawSwap",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "b642c3d2-b763-4d79-b707-253aa084e295",
-                    "path": "",
+                    "id": "29201ba2-6ab2-4c26-8a7b-95be31abfff4",
+                    "path": "<XInputController>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

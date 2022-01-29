@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Top Claw
+  - Mid Claw
+  - Bot Claw
+  - Dwn Claw
+  - Crab1
+  - Crab2
   layers:
   - Default
   - TransparentFX
