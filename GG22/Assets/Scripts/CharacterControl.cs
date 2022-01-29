@@ -148,7 +148,7 @@ public class CharacterControl : MonoBehaviour
 
         if(collision.gameObject.tag == "Crab1" || collision.gameObject.tag == "Crab2")
         {
-            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<BoxCollider2D>(), gameObject.GetComponent<BoxCollider2D>());
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<PolygonCollider2D>(), gameObject.GetComponent<PolygonCollider2D>());
         }
     }
 }
