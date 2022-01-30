@@ -21,7 +21,7 @@ public class CrabBase : MonoBehaviour
     {
         Health = 2;
         MaxHealth = 2;
-        Connected = true;
+        Connected = false;
         respawnTime = 3;
         CrabAlive = true;
     }

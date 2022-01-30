@@ -11,6 +11,8 @@ TagManager:
   - Dwn Claw
   - Crab1
   - Crab2
+  - Rope
+  - RopeCore
   layers:
   - Default
   - TransparentFX

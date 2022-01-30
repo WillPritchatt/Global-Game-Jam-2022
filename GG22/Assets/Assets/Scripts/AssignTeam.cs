@@ -19,16 +19,25 @@ public class AssignTeam : MonoBehaviour
         GameObject tempObj = null;
         foreach (Transform child in transform)
         {
-            count2++;
-            child.GetComponent<CrabBase>().Team = count;
+
+            if (child.GetComponent<CrabBase>())
+            {
+                count2++;
+                child.GetComponent<CrabBase>().Team = count;
+            }
+
             if (count2 == 1)
             {
                 tempObj = child.gameObject;
             }
+
             if(count2 == 2)
             {
-                child.GetComponent<CrabBase>().Ally = tempObj;
-                tempObj.GetComponent<CrabBase>().Ally = child.gameObject;
+                if (child.GetComponent<CrabBase>())
+                {
+                    child.GetComponent<CrabBase>().Ally = tempObj;
+                    tempObj.GetComponent<CrabBase>().Ally = child.gameObject;
+                }
             }
 
             if (count > 1)

@@ -20,6 +20,8 @@ public class CharacterControl : MonoBehaviour
     public GameObject Claw;
     private int Strike;
 
+    public Vector2 startPos;
+
     private List<GameObject> CurrentColision = new List<GameObject>();
 
     private Vector2 MovementInput = Vector2.zero;
@@ -28,6 +30,7 @@ public class CharacterControl : MonoBehaviour
     private bool canChange = true;
 
     public GameObject topClaw, midClaw, botClaw, dwnClaw;
+    public int playerID;
 
     public enum claws
     {
@@ -52,6 +55,8 @@ public class CharacterControl : MonoBehaviour
             if (child.gameObject.activeInHierarchy)
                 Claw = child.gameObject;
         }
+
+        transform.position = startPos;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -184,9 +189,9 @@ public class CharacterControl : MonoBehaviour
             groundedPlayer = true;
         }
 
-        //if (collision.gameObject.tag == "Crab1" || collision.gameObject.tag == "Crab2")
-        //{
-        //    Physics2D.IgnoreCollision(collision.gameObject.GetComponent<PolygonCollider2D>(), gameObject.GetComponent<PolygonCollider2D>());
-        //}
+        if (collision.gameObject.tag == "Rope" || collision.gameObject.tag == "RopeCore")
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<BoxCollider2D>(), gameObject.GetComponent<BoxCollider2D>());
+        }
     }
 }
