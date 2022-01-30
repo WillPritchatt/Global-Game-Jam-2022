@@ -179,7 +179,7 @@ public class CharacterControl : MonoBehaviour
 
         if(collision.gameObject.tag != Claw)
         {
-            collision.gameObject.GetComponent<CrabBase>().;
+            //collision.gameObject.GetComponent<CrabBase>().;
         }
     }
 }
