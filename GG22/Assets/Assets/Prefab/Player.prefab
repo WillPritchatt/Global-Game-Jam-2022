@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5165843324022403202}
   - component: {fileID: 5165843324022403203}
   - component: {fileID: 7132846320280882443}
+  - component: {fileID: 5504008832615542971}
   m_Layer: 0
   m_Name: DWN CLAW
   m_TagString: Untagged
@@ -109,6 +110,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &5504008832615542971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165843324022403205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5aeb700e0273dc46b701d4a2ea31745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5165843324105305388
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +133,7 @@ GameObject:
   - component: {fileID: 5165843324105305389}
   - component: {fileID: 5165843324105305386}
   - component: {fileID: 990870961063382319}
+  - component: {fileID: 1959045319160195200}
   m_Layer: 0
   m_Name: MID CLAW
   m_TagString: Mid Claw
@@ -218,6 +232,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1959045319160195200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165843324105305388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5aeb700e0273dc46b701d4a2ea31745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5165843324133612676
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +255,7 @@ GameObject:
   - component: {fileID: 5165843324133612677}
   - component: {fileID: 5165843324133612674}
   - component: {fileID: 6618966876347722977}
+  - component: {fileID: 9029231688173168604}
   m_Layer: 0
   m_Name: BOT CLAW
   m_TagString: Bot Claw
@@ -327,6 +354,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &9029231688173168604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165843324133612676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5aeb700e0273dc46b701d4a2ea31745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5165843324235925454
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +712,8 @@ MonoBehaviour:
   jumpHeight: 17
   gravityValue: -9.81
   groundedPlayer: 1
+  canHit: 1
+  Claw: {fileID: 0}
   topClaw: {fileID: 0}
   midClaw: {fileID: 0}
   botClaw: {fileID: 0}
@@ -712,11 +753,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 0
-  MaxHealth: 0
   Connected: 0
   CrabAlive: 0
-  respawnTime: 0
   Team: 0
+  bodyAlive: {fileID: 21300000, guid: 9440ef3e3cab0aa4bbc4ab262d948ed7, type: 3}
+  bodyDead: {fileID: 21300000, guid: cbd81995104bdf544bcaf40a452e78b8, type: 3}
 --- !u!1 &5165843325316395567
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +769,7 @@ GameObject:
   - component: {fileID: 5165843325316395564}
   - component: {fileID: 5165843325316395565}
   - component: {fileID: 5165843323903859105}
+  - component: {fileID: 6922255785597187634}
   m_Layer: 0
   m_Name: TOP CLAW
   m_TagString: Top Claw
@@ -826,6 +868,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &6922255785597187634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165843325316395567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5aeb700e0273dc46b701d4a2ea31745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5708615702131215401
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,6 +936,7 @@ GameObject:
   - component: {fileID: 5787555387602517993}
   - component: {fileID: 5787555387602517992}
   - component: {fileID: 5787555389409104996}
+  - component: {fileID: 2547706984629004401}
   m_Layer: 0
   m_Name: TOP CLAW
   m_TagString: Top Claw
@@ -980,6 +1035,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &2547706984629004401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787555387602517994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5aeb700e0273dc46b701d4a2ea31745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5787555388418293056
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1058,7 @@ GameObject:
   - component: {fileID: 5787555388418293063}
   - component: {fileID: 5787555388418293062}
   - component: {fileID: 6571022425983787604}
+  - component: {fileID: 4863434011562856907}
   m_Layer: 0
   m_Name: DWN CLAW
   m_TagString: Untagged
@@ -1089,6 +1157,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &4863434011562856907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787555388418293056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5aeb700e0273dc46b701d4a2ea31745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5787555388536840425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1180,7 @@ GameObject:
   - component: {fileID: 5787555388536840424}
   - component: {fileID: 5787555388536840431}
   - component: {fileID: 1882788557774553322}
+  - component: {fileID: 5728029170591961554}
   m_Layer: 0
   m_Name: MID CLAW
   m_TagString: Mid Claw
@@ -1198,6 +1279,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5728029170591961554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787555388536840425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5aeb700e0273dc46b701d4a2ea31745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5787555388567245121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1302,7 @@ GameObject:
   - component: {fileID: 5787555388567245120}
   - component: {fileID: 5787555388567245127}
   - component: {fileID: 5492718751293120804}
+  - component: {fileID: 5847820330342420398}
   m_Layer: 0
   m_Name: BOT CLAW
   m_TagString: Bot Claw
@@ -1307,6 +1401,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5847820330342420398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787555388567245121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5aeb700e0273dc46b701d4a2ea31745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5787555388666382859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,6 +1780,8 @@ MonoBehaviour:
   jumpHeight: 17
   gravityValue: -9.81
   groundedPlayer: 1
+  canHit: 1
+  Claw: {fileID: 0}
   topClaw: {fileID: 0}
   midClaw: {fileID: 0}
   botClaw: {fileID: 0}
@@ -1692,8 +1800,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 0
-  MaxHealth: 0
   Connected: 0
   CrabAlive: 0
-  respawnTime: 0
   Team: 0
+  bodyAlive: {fileID: 21300000, guid: 9440ef3e3cab0aa4bbc4ab262d948ed7, type: 3}
+  bodyDead: {fileID: 21300000, guid: cbd81995104bdf544bcaf40a452e78b8, type: 3}

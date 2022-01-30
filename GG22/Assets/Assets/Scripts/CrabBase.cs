@@ -5,16 +5,25 @@ using UnityEngine;
 public class CrabBase : MonoBehaviour
 {
     public int Health;
-    public int MaxHealth;
+    private int MaxHealth;
     public bool Connected;
     public bool CrabAlive;
-    public int respawnTime;
+    private float timer, timeUntilRespawn;
+    private float respawnTime;
     public int Team;
+
+    public GameObject Ally;
+
+    public Sprite bodyAlive;
+    public Sprite bodyDead;
 
     private void Awake()
     {
         Health = 2;
         MaxHealth = 2;
+        Connected = true;
+        respawnTime = 3;
+        CrabAlive = true;
     }
 
     private void Update()
@@ -23,11 +32,20 @@ public class CrabBase : MonoBehaviour
         {
             Health = 1;
         }
-    }
-
-    IEnumerator TimerCoRoutine()
-    {
-        yield return new WaitForSeconds(respawnTime);
+        
+        timer += Time.deltaTime;
+        if (Connected && !CrabAlive && Ally.GetComponent<CrabBase>().CrabAlive)
+        {
+            if (timer > timeUntilRespawn)
+            {
+                gameObject.GetComponent<CharacterControl>().enabled = true;
+                gameObject.GetComponent<CharacterControl>().Claw.SetActive(true);
+                gameObject.GetComponent<SpriteRenderer>().sprite = bodyAlive;
+                CrabAlive = true;
+                Health = 2;
+                timer = 0;
+            }
+        }
     }
 
     public void TakeDamage()
@@ -42,14 +60,14 @@ public class CrabBase : MonoBehaviour
 
     public void KillCrab()
     {
+        gameObject.GetComponent<CharacterControl>().Claw.SetActive(false);
         gameObject.GetComponent<CharacterControl>().enabled = false;
         //Dead State
+        gameObject.GetComponent<SpriteRenderer>().sprite = bodyDead;
         CrabAlive = false;
-        TimerCoRoutine();
-        if (Connected /*or if other crab is not dead*/)
+        if (Connected)
         {
-            gameObject.GetComponent<CharacterControl>().enabled = true;
-            Health = 2;
+            timeUntilRespawn = timer + respawnTime;
         }
     }
 }

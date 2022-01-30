@@ -17,8 +17,10 @@ public class CharacterControl : MonoBehaviour
     private Vector3 playerVelocity;
     public bool groundedPlayer = true;
     public bool canHit = true;
-    private BoxCollider2D Claw;
+    public GameObject Claw;
     private int Strike;
+
+    private List<GameObject> CurrentColision = new List<GameObject>();
 
     private Vector2 MovementInput = Vector2.zero;
     private float Jumped;
@@ -48,7 +50,7 @@ public class CharacterControl : MonoBehaviour
         foreach (Transform child in transform)
         {
             if (child.gameObject.activeInHierarchy)
-                Claw = child.GetComponent<BoxCollider2D>();
+                Claw = child.gameObject;
         }
     }
 
@@ -65,6 +67,7 @@ public class CharacterControl : MonoBehaviour
     public void OnStrike(InputAction.CallbackContext context)
     {
         Strike = (int)context.ReadValue<float>();
+        Claw.GetComponent<ClawStrike>().Strike = context.ReadValue<float>();
     }
 
     public void OnClawChange(InputAction.CallbackContext context)
@@ -82,6 +85,7 @@ public class CharacterControl : MonoBehaviour
                     topClaw.SetActive(false);
                     activeClaw = claws.MidClaw;
                     midClaw.SetActive(true);
+                    Claw = midClaw;
                     break;
                 }
 
@@ -92,11 +96,13 @@ public class CharacterControl : MonoBehaviour
                     {
                         activeClaw = claws.TopClaw;
                         topClaw.SetActive(true);
+                        Claw = topClaw;
                     }
                     else if (dir < 0)
                     {
                         activeClaw = claws.BotClaw;
                         botClaw.SetActive(true);
+                        Claw = botClaw;
                     }
                     break;
                 }
@@ -108,11 +114,13 @@ public class CharacterControl : MonoBehaviour
                     {
                         activeClaw = claws.MidClaw;
                         midClaw.SetActive(true);
+                        Claw = midClaw;
                     }
                     else if (dir < 0)
                     {
                         activeClaw = claws.DwnClaw;
                         dwnClaw.SetActive(true);
+                        Claw = dwnClaw;
                     }
                     break;
                 }
@@ -122,6 +130,7 @@ public class CharacterControl : MonoBehaviour
                     dwnClaw.SetActive(false);
                     activeClaw = claws.BotClaw;
                     botClaw.SetActive(true);
+                    Claw = botClaw;
                     break;
                 }
         }
@@ -143,11 +152,6 @@ public class CharacterControl : MonoBehaviour
             if ((dir == 1 && activeClaw != claws.TopClaw) || (dir == -1 && activeClaw != claws.DwnClaw))
             {
                 ChangeClaw();
-                foreach (Transform child in transform)
-                {
-                    if (child.gameObject.activeInHierarchy)
-                        Claw = child.GetComponent<BoxCollider2D>();
-                }
             }
         }
 
@@ -180,20 +184,9 @@ public class CharacterControl : MonoBehaviour
             groundedPlayer = true;
         }
 
-        if (collision.gameObject.tag == "Crab1" || collision.gameObject.tag == "Crab2")
-        {
-            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<PolygonCollider2D>(), gameObject.GetComponent<PolygonCollider2D>());
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (Strike == 1 && canHit)
-        {
-            canHit = !canHit;
-            if (collision.gameObject.GetComponent<CrabBase>())
-                if(gameObject.GetComponent<CrabBase>().Team != collision.gameObject.GetComponent<CrabBase>().Team)
-                    collision.gameObject.GetComponent<CrabBase>().TakeDamage();
-        }
+        //if (collision.gameObject.tag == "Crab1" || collision.gameObject.tag == "Crab2")
+        //{
+        //    Physics2D.IgnoreCollision(collision.gameObject.GetComponent<PolygonCollider2D>(), gameObject.GetComponent<PolygonCollider2D>());
+        //}
     }
 }
