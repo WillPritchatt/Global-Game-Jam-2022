@@ -16,7 +16,9 @@ public class CharacterControl : MonoBehaviour
     private Rigidbody2D RB2D;
     private Vector3 playerVelocity;
     public bool groundedPlayer = true;
-    private string Claw;
+    public bool canHit = true;
+    private BoxCollider2D Claw;
+    private int Strike;
 
     private Vector2 MovementInput = Vector2.zero;
     private float Jumped;
@@ -46,7 +48,7 @@ public class CharacterControl : MonoBehaviour
         foreach (Transform child in transform)
         {
             if (child.gameObject.activeInHierarchy)
-                Claw = child.gameObject.tag;
+                Claw = child.GetComponent<BoxCollider2D>();
         }
     }
 
@@ -62,7 +64,7 @@ public class CharacterControl : MonoBehaviour
 
     public void OnStrike(InputAction.CallbackContext context)
     {
-        Debug.Log(context.ReadValue<float>());
+        Strike = (int)context.ReadValue<float>();
     }
 
     public void OnClawChange(InputAction.CallbackContext context)
@@ -141,11 +143,26 @@ public class CharacterControl : MonoBehaviour
             if ((dir == 1 && activeClaw != claws.TopClaw) || (dir == -1 && activeClaw != claws.DwnClaw))
             {
                 ChangeClaw();
+                foreach (Transform child in transform)
+                {
+                    if (child.gameObject.activeInHierarchy)
+                        Claw = child.GetComponent<BoxCollider2D>();
+                }
             }
         }
 
         if (!canChange && dir == 0)
             canChange = !canChange;
+
+        if(Strike == 0 && !canHit)
+        {
+            canHit = !canHit;
+        }
+    }
+
+    IEnumerator TimerCoRoutine()
+    {
+        yield return new WaitForSeconds(1);
     }
 
     private void FixedUpdate()
@@ -169,17 +186,14 @@ public class CharacterControl : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        foreach (Transform child in transform)
+        if (Strike == 1 && canHit)
         {
-            if (child.gameObject.activeInHierarchy)
-                Claw = child.gameObject.tag;
-        }
-
-        if(collision.gameObject.tag != Claw)
-        {
-            collision.gameObject.GetComponent<CrabBase>().;
+            canHit = !canHit;
+            if (collision.gameObject.GetComponent<CrabBase>())
+                if(gameObject.GetComponent<CrabBase>().Team != collision.gameObject.GetComponent<CrabBase>().Team)
+                    collision.gameObject.GetComponent<CrabBase>().TakeDamage();
         }
     }
 }
