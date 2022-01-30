@@ -56,7 +56,8 @@ public class CharacterControl : MonoBehaviour
                 Claw = child.gameObject;
         }
 
-        transform.position = startPos;
+        if (startPos.x != 0 && startPos.y != 0)
+            transform.position = startPos;
     }
 
     public void OnMove(InputAction.CallbackContext context)
